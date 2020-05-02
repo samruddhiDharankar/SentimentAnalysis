@@ -1,6 +1,6 @@
 Steps for installation
 1. To install Flask, Go to your project folder
-    pip install flask
+    **pip install flask**
 
 2. For installing Textblob which will be used for Sentiment analysis
     pip install -U textblob
