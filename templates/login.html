@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Flask </title>
+</head>
+<body>
+	<div class="container">
+		<form action="" class="form-inline" method="POST">
+			<input type="text" class="form-control" placeholder="Username" name="username" value="{{request.form.username}}">
+			<input type="password" class="form-control" placeholder="Password" name="password" value="{{request.form.password}}">
+			<input class="btn btn-default" type="submit" value="login">
+		</form>
+		<p>{{error}}</p>
+	</div>
+	
+</body>
+</html>
