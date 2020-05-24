@@ -1,15 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/mainpage.css') }}">
 	<title>Result </title>
+
 </head>
 <body>
-	<p>successfull login</p>
 	<div class="container">
-		<form action="" method = "POST"> <!-- defines onClick redirect route, method of request --> 
-			<input type = "text" class="form-control" placeholder="type review" name ="rating" value="{{request.form.rating}}"> <!-- name="Name" is used in flask to fetch input using request.form --> 
-			<input type = "submit" name = "submit" value="submit"> <!-- submit event -->  
-		</form>
+		<div class="row">
+			<div class="col-md-6">
+				<select name="manu">
+					{% for manu in carlist %}
+						<option value="{{ manu }}">{{ manu }}</option>
+					{% endfor %}
+					 </select>
+			  </div>
+			  
+			 
+			<div class="col-md-6" id="rating">   
+				<form action="" method = "POST"> 
+					<input type = "text" class="form-control" placeholder="type review" name ="rating" value="{{request.form.rating}}"> <!-- name="Name" is used in flask to fetch input using request.form --> 
+					<input type = "submit" name = "submit" value="submit">
+				</form>
+			</div>
+
+		</div>	
 	</div>
+
+	
 </body>
 </html>

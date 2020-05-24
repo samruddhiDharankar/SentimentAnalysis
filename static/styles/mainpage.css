@@ -1,0 +1,117 @@
+
+
+#loginForm {
+    /* padding-top: 120px; */
+    margin-top: 90px;
+    margin-left: 420px;
+    /* padding-right: 60px; */
+    text-align: right;
+    /* margin-right: 220px; */
+    /* margin: 0 auto;  */
+    /* width:250px; */
+    /* padding-right: -50%; */
+}
+
+input[type="text"],
+input[type="password"] {
+    margin-top: 30px;
+    display: block;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    padding: 4px;
+    width: 220px;
+    height: 32px;
+    border: none;
+    border-bottom: 1px solid #AAA;  
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    transition: 0.2s ease;
+    border-radius: 5px;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    /* border-bottom: 2px solid #16a085;  */
+    /* color: #16a085; */
+    transition: 0.4s ease;
+}
+
+input[type="submit"] {
+    margin-top: 38px;
+    margin-left: 50px;
+    width: 120px;
+    height: 32px;
+    background: rgb(136, 0, 204);
+    border: none;
+    /* border-radius: 2px; */
+    color: #FFF;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: 0.1s ease;
+    cursor: pointer;
+    align-self : center;
+    display: block;
+    /* margin: 30 30 30 50; */
+    border-radius: 15px;
+
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+    opacity: 0.8;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    transition: 0.1s ease;
+}
+
+input[type="submit"]:active {
+    opacity: 1;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    transition: 0.1s ease;
+}
+
+
+h1 {
+    padding-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 60px;
+    text-align: left;
+    font-size: 28px;
+    font-family: "Graphik Meetup",monospace  ;
+    font-weight: lighter;
+    color : rgb(0, 0, 77);
+  }
+
+#adminLogin h1 {
+    padding-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 30px;
+    text-align: left;
+    font-size: 28px;
+    font-family: "Graphik Meetup",monospace  ;
+    font-weight: lighter;
+    color : rgb(0, 0, 77);
+}
+
+#rating {
+    margin-top: 190px;
+    margin-right: -140px;
+    padding-left: 120px;
+    /* text-align: right; */
+}
+
+#polarity {
+    
+    margin-top: 90px;
+    margin-left: 350px;
+}
+
+#movie {
+    margin-top: 230px;
+    margin-right: -140px;
+    padding-left: 270px;
+    border-radius: 15px;
+    background: rgb(136, 0, 204);
+
+}

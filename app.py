@@ -3,31 +3,11 @@ from textblob import TextBlob
 
 app = Flask(__name__)
 
-@app.route("/")
-def home():
-	return render_template("index.html")
+# @app.route("/")
+# def home():
+# 	return render_template("index.html")
 
-@app.route("/result", methods = ["POST", "GET"])
-def result():
-	result = ""
-	if request.method == "POST":
-		result = request.form['rating']
-		blob = TextBlob(result)
-		for sentence in blob.sentences:
-			result = sentence.sentiment.polarity
-		return render_template("result1.html", result=result)
-		
-	else:
-		return render_template("result.html")
-		
-	# return render_template("result.html")
-
-@app.route("/result1", methods = ["POST", "GET"])
-def result1():
-	return render_template("result1.html")
-
-
-@app.route("/login", methods=["POST","GET"])
+@app.route("/", methods=["POST","GET"])								#LOGIN FUNCTION
 def login():
 	error = ""
 	try:
@@ -53,6 +33,38 @@ def login():
 
 
 	return render_template("login.html")
+
+
+@app.route("/result", methods = ["POST", "GET"])						#SENTIMENT ANALYSIS LOGIC
+def result():
+	result = ""
+	carlist = ['ZNMD', 'HDDCS']
+	if request.method == "POST":
+		result = request.form['rating']
+		manufacturer = request.form['manu']
+		
+		blob = TextBlob(result)
+		for sentence in blob.sentences:
+			result = sentence.sentiment.polarity
+			data = result * 100
+			data = round(data,2)
+			if result > 0:
+				return render_template("result1.html", data = data, result="Positive",  carlist=carlist)
+			elif result < 0:
+				data = (-1) * data
+				return render_template("result1.html", data = data, result="Negative",  carlist=carlist)
+			else:
+				return render_template("result1.html", data = data, result="Neutral",  carlist=carlist)		
+	
+	else:
+		return render_template("result.html")
+		
+
+@app.route("/result1", methods = ["POST", "GET"])
+def result1():
+	return render_template("result1.html")
+
+
 
 
 
