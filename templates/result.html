@@ -9,23 +9,20 @@
 <body>
 	<div class="container">
 		<div class="row">
-			<div class="col-md-6">
-
-				<select name= movies method="GET" action="/">
-					{% for colour in movies %}
-					<option value= "{{colour}}" SELECTED>{{colour}}</option>"
-					{% endfor %}
-				</select>
-			  </div>
+			<form action="" method = "POST">
+				<div class="col-md-6" id="movie">
+					<select name="movies" method="GET" action="/">
+						{% for colour in movies %}
+						<option value= "{{colour}}" SELECTED>{{colour}}</option>"
+						{% endfor %}
+					</select>
+				</div>
 			  
-			 
-			<div class="col-md-6" id="rating">   
-				<form action="" method = "POST"> 
+				<div class="col-md-6" id="rating">   
 					<input type = "text" class="form-control" placeholder="type review" name ="rating" value="{{request.form.rating}}"> <!-- name="Name" is used in flask to fetch input using request.form --> 
 					<input type = "submit" name = "submit" value="submit">
-				</form>
-			</div>
-
+				</div>
+			</form>
 		</div>	
 	</div>
 
