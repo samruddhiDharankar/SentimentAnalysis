@@ -5,8 +5,8 @@ app = Flask(__name__)
 
 @app.route('/result', methods=['GET'])
 def dropdown():
-    colours = ['ZNMD', 'ABC', 'XYZ', 'UVW']
-    return render_template('result.html', colours=colours)
+    movies = ['ZNMD', 'ABC', 'XYZ', 'UVW']
+    return render_template('result.html', movies=movies)
 
 @app.route("/", methods=["POST","GET"])								#LOGIN FUNCTION
 def login():
