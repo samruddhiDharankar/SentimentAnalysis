@@ -3,9 +3,10 @@ from textblob import TextBlob
 
 app = Flask(__name__)
 
-# @app.route("/")
-# def home():
-# 	return render_template("index.html")
+@app.route('/result', methods=['GET'])
+def dropdown():
+    colours = ['ZNMD', 'ABC', 'XYZ', 'UVW']
+    return render_template('result.html', colours=colours)
 
 @app.route("/", methods=["POST","GET"])								#LOGIN FUNCTION
 def login():
@@ -38,24 +39,23 @@ def login():
 @app.route("/result", methods = ["POST", "GET"])						#SENTIMENT ANALYSIS LOGIC
 def result():
 	result = ""
-	carlist = ['ZNMD', 'HDDCS']
+
 	if request.method == "POST":
 		result = request.form['rating']
-		manufacturer = request.form['manu']
-		
+			
 		blob = TextBlob(result)
 		for sentence in blob.sentences:
 			result = sentence.sentiment.polarity
 			data = result * 100
 			data = round(data,2)
 			if result > 0:
-				return render_template("result1.html", data = data, result="Positive",  carlist=carlist)
+				return render_template("result1.html", data = data, result="Positive")
 			elif result < 0:
 				data = (-1) * data
-				return render_template("result1.html", data = data, result="Negative",  carlist=carlist)
+				return render_template("result1.html", data = data, result="Negative")
 			else:
-				return render_template("result1.html", data = data, result="Neutral",  carlist=carlist)		
-	
+				return render_template("result1.html", data = data, result="Neutral")		
+		
 	else:
 		return render_template("result.html")
 		

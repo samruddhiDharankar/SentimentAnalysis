@@ -10,11 +10,12 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6">
-				<select name="manu">
-					{% for manu in carlist %}
-						<option value="{{ manu }}">{{ manu }}</option>
+
+				<select name= colours method="GET" action="/">
+					{% for colour in colours %}
+					<option value= "{{colour}}" SELECTED>{{colour}}</option>"
 					{% endfor %}
-					 </select>
+				</select>
 			  </div>
 			  
 			 
